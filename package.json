@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node server/index.js"
+    "dev": "NODE_ENV=development node server/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +16,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.5.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
